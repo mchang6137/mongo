@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+    - "7.10.0"
+
+install:
+    - npm install .
+    - curl -sL -o ./quilt https://github.com/quilt/quilt/releases/download/dev/quilt_linux
+        && chmod +x ./quilt
+
+before_script:
+    - npm install -g gulp-cli
+
+script:
+    - gulp lint
+    - ./quilt inspect ./example.js graphviz
+
+notifications:
+    slack:
+        secure: Pma1XcG/vxFR0iHaPjQ1lxDIU5E9s/gn1tezPI0PKBjen3BziqJ++SxOvs0dKxzZhj1VZmB6W8peUAmbWNnbEy+7hQZT3exZ95seSM4VlE16o9/0dk9yTOq/XlfHL+C9t6TZSKqjqp2nQIolQ5Rz1LyouecnC3eaxyYv0NA3svXqid6a+5bfzCMce0SYJ1Eq7L4nXDNj2wqcdI7F5OKQbtwkqPi2WWCJPNgnQQ3OYW+tVJppOVo049OnAcKNKnLfyDzBI/Gm1pCSu6fkQBwDjotbb3dEFOq8jQ+VVcaBTqYTJc6+zcL+tNO4ZPZf0Oso8eJu8jgkMMUxbUPmzFs0btDbBRuhFN25Jsk+QOh/Y8DLeSHEzZkINO/FWtYruOxiXrK+LQ2kjvTD+/+b/kiuisN6XvgQasbYs80dj/y7a99BPqPIbqROFgddh1ThtXkcaIviz/LPITvFWc+VogMltjt1SGwu4ElrQjCxyToXmsfLy5Kd6ieU4stpMjfzRxXSKo8Q5COxt+ki6s1ZF6t1BIl1goshbEYh378zzpTqFiWgtm8QcOZQqMKTn/pqBo4vP585t+zesASMFzU2JoifH9CUe18/OOxJNuZvFZew0QIGuuDmnFcukoZ+HmkoTI5g+ksJ/ClrYZA+9YoJ2KPOOX9WHwT8GYwODVYs5X7mmL0=

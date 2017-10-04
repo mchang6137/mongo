@@ -1,0 +1,17 @@
+{
+  "name": "@quilt/mongo",
+  "version": "0.0.2",
+  "main": "./mongo.js",
+  "license": "MIT",
+  "dependencies": {
+    "@quilt/quilt": "./../quilt"
+  },
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.0",
+    "gulp-if": "^2.0.2"
+  }
+}
